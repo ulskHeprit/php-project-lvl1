@@ -9,10 +9,8 @@ use function cli\prompt;
 const CORRECT_ANSWERS_TO_WIN = 3;
 $correctAnswers = ['yes', 'no'];
 
+require_once 'src/start.php';
 
-line('Welcome to the Brain Games!');
-$playerName = prompt('May I have your name?');
-line('Hello, %s!', $playerName);
 line('Answer "yes" if the number is even, otherwise answer "no".');
 $correctAnswersCount = 0;
 
@@ -21,7 +19,7 @@ while (true) {
     $isEven = $randomNumber % 2 === 0;
 
     line('Question: %d', $randomNumber);
-    $answer = trim(prompt('Your answer: '));
+    $answer = trim(prompt('Your answer'));
     $isAnswerYes = $answer === 'yes';
 
     if (
@@ -32,7 +30,7 @@ while (true) {
         $correctAnswersCount++;
     } else {
         line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $isEven ? 'yes' : 'no');
-        line("'Let's try again, Bill!'");
+        line("'Let's try again, %s!'", $playerName);
         break;
     }
 
