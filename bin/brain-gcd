@@ -2,11 +2,11 @@
 <?php
 
 use Hexlet\Code\Engine;
-use Hexlet\Code\Games\Even;
+use Hexlet\Code\Games\Gcd;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $engine = new Engine();
-$game = new Even();
+$game = new Gcd();
 
 $engine->run($game);

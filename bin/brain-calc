@@ -1,43 +1,12 @@
 #!/usr/bin/env php
 <?php
 
+use Hexlet\Code\Engine;
+use Hexlet\Code\Games\Calculator;
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
-use function cli\line;
-use function cli\prompt;
+$engine = new Engine();
+$game = new Calculator();
 
-const CORRECT_ANSWERS_TO_WIN = 3;
-
-require_once 'src/start.php';
-
-line('What is the result of the expression?');
-$correctAnswersCount = 0;
-$operationsList = ['+', '-', '*'];
-
-while (true) {
-    $leftOperand = rand(0, 100);
-    $rightOperand = rand(0, 100);
-    $operation = $operationsList[array_rand($operationsList)];
-
-    line('Question: %d %s %d', $leftOperand, $operation, $rightOperand);
-    $correctAnswer = match ($operation) {
-        '+' => $leftOperand + $rightOperand,
-        '-' => $leftOperand - $rightOperand,
-        '*' => $leftOperand * $rightOperand,
-    };
-    $playerAnswer = (int) trim(prompt('Your answer'));
-
-    if ($playerAnswer === $correctAnswer) {
-        line('Correct!');
-        $correctAnswersCount++;
-    } else {
-        line("'%s' is wrong answer ;(. Correct answer was '%s'.", $correctAnswer);
-        line("'Let's try again, %s!'", $playerName);
-        break;
-    }
-
-    if ($correctAnswersCount >= CORRECT_ANSWERS_TO_WIN) {
-        line('Congratulations, %s!', $playerName);
-        break;
-    }
-}
+$engine->run($game);
