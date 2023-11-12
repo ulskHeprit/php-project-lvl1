@@ -23,11 +23,17 @@ class Calculator implements IGame
         $rightOperand = rand(0, 100);
         $operation = (string) $this->operationsList[array_rand($this->operationsList)];
 
-        $this->correctAnswer = match ($operation) {
-            '+' => $leftOperand + $rightOperand,
-            '-' => $leftOperand - $rightOperand,
-            '*' => $leftOperand * $rightOperand,
-        };
+        switch ($operation) {
+            case '+':
+                $this->correctAnswer = $leftOperand + $rightOperand;
+                break;
+            case '-':
+                $this->correctAnswer = $leftOperand - $rightOperand;
+                break;
+            case '*':
+                $this->correctAnswer = $leftOperand * $rightOperand;
+                break;
+        }
 
         return sprintf('Question: %d %s %d', $leftOperand, $operation, $rightOperand);
     }
