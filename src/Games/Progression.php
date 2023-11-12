@@ -2,10 +2,12 @@
 
 namespace Hexlet\Code\Games;
 
+/** @phpstan-ignore-next-line */
 class Progression implements IGame
 {
     private string $description = 'What number is missing in the progression?';
 
+    /** @phpstan-ignore-next-line */
     private $correctAnswer;
 
     public function getDescription(): string

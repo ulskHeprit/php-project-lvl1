@@ -2,10 +2,12 @@
 
 namespace Hexlet\Code\Games;
 
+/** @phpstan-ignore-next-line */
 class Even implements IGame
 {
     private string $description = 'Answer "yes" if the number is even, otherwise answer "no".';
 
+    /** @phpstan-ignore-next-line */
     private $correctAnswer;
 
     public function getDescription(): string

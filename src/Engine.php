@@ -7,6 +7,7 @@ use Hexlet\Code\Games\IGame;
 use function cli\line;
 use function cli\prompt;
 
+/** @phpstan-ignore-next-line */
 class Engine
 {
     const CORRECT_ANSWERS_TO_WIN = 3;

@@ -2,10 +2,12 @@
 
 namespace Hexlet\Code\Games;
 
+/** @phpstan-ignore-next-line */
 class Prime implements IGame
 {
     private string $description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
+    /** @phpstan-ignore-next-line */
     private $correctAnswer;
 
     public function getDescription(): string

@@ -2,12 +2,14 @@
 
 namespace Hexlet\Code\Games;
 
+/** @phpstan-ignore-next-line */
 class Calculator implements IGame
 {
     private string $description = 'What is the result of the expression?';
 
     private array $operationsList = ['+', '-', '*'];
 
+    /** @phpstan-ignore-next-line */
     private $correctAnswer;
 
     public function getDescription(): string
@@ -19,7 +21,7 @@ class Calculator implements IGame
     {
         $leftOperand = rand(0, 100);
         $rightOperand = rand(0, 100);
-        $operation = $this->operationsList[array_rand($this->operationsList)];
+        $operation = (string) $this->operationsList[array_rand($this->operationsList)];
 
         $this->correctAnswer = match ($operation) {
             '+' => $leftOperand + $rightOperand,

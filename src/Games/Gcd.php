@@ -2,10 +2,12 @@
 
 namespace Hexlet\Code\Games;
 
+/** @phpstan-ignore-next-line */
 class Gcd implements IGame
 {
     private string $description = 'Find the greatest common divisor of given numbers.';
 
+    /** @phpstan-ignore-next-line */
     private $correctAnswer;
 
     public function getDescription(): string
