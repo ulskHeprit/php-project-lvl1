@@ -1,0 +1,12 @@
+#!/usr/bin/env php
+<?php
+
+use Hexlet\Code\Engine;
+use Hexlet\Code\Games\Prime;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$engine = new Engine();
+$game = new Prime();
+
+$engine->run($game);
