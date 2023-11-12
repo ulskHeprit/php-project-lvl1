@@ -3,6 +3,7 @@
 namespace Hexlet\Code;
 
 use Hexlet\Code\Games\IGame;
+
 use function cli\line;
 use function cli\prompt;
 
@@ -12,7 +13,8 @@ class Engine
 
     private string $playerName;
 
-    public function run(IGame $game):void {
+    public function run(IGame $game): void
+    {
         $this->askPlayerName();
         $this->greetThePlayer();
 
@@ -41,11 +43,13 @@ class Engine
         }
     }
 
-    private function askPlayerName(): void {
+    private function askPlayerName(): void
+    {
         $this->playerName = prompt('May I have your name?');
     }
 
-    private function greetThePlayer(): void {
+    private function greetThePlayer(): void
+    {
         line('Welcome to the Brain Games!');
         line('Hello, %s!', $this->playerName);
     }
